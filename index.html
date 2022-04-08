@@ -46,7 +46,9 @@
 <div id="app">
   <!-- Images -->
   <ul>
-    <li v-for="book in books" :class="{ fav: book.isFav }" @click="toggleFav(book)">
+    <button v-show="filterFavBooks" @click="toggleFavFilter">Show Favorites</button>
+    <button v-show="!filterFavBooks" @click="toggleFavFilter">Hide Favorites</button>
+    <li v-for="book in getBooks" :class="{ fav: book.isFav }" @click="toggleFav(book)">
       <image :src="book.img" :alt="book.title"></image>
       <h3>title: {{book.title}}</h3>
       <p>author: {{book.author}}</p>
