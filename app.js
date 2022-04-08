@@ -7,9 +7,9 @@ const app = Vue.createApp({
       url2: "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/329050/5da78aa9fa51e0d7fd1dd4f836f2e924f63c68db.jpg",
       showBooks: true,
       books: [
-        { title: "wind", author: "roofus", img: "assets/1.jpg" },
-        { title: "fire", author: "roofus", img: "assets/2.jpg" },
-        { title: "earth", author: "ted", img: "assets/3.jpg" },
+        { title: "wind", author: "roofus", img: "assets/1.jpg", isFav: true },
+        { title: "fire", author: "roofus", img: "assets/2.jpg", isFav: false },
+        { title: "earth", author: "ted", img: "assets/3.jpg" , isFav: true},
       ],
       title: "The Final Empire",
       author: "Brandon Sanderson",
