@@ -9,7 +9,7 @@ const app = Vue.createApp({
       books: [
         { title: "wind", author: "roofus", img: "assets/1.jpg", isFav: true },
         { title: "fire", author: "roofus", img: "assets/2.jpg", isFav: false },
-        { title: "earth", author: "ted", img: "assets/3.jpg" , isFav: true},
+        { title: "earth", author: "ted", img: "assets/3.jpg", isFav: true },
       ],
       title: "The Final Empire",
       author: "Brandon Sanderson",
@@ -29,6 +29,9 @@ const app = Vue.createApp({
       this.x = e.offsetX;
       this.y = e.offsetY;
       console.log(this.x, this.y);
+    },
+    toggleFav(book) {
+      book.isFav = !book.isFav;
     },
   },
 });
