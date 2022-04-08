@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <!-- prototyping and learning version -->
+
+    <style>
+      .box {
+        padding: 100px 0;
+        width: 400px;
+        text-align: center;
+        background: #ddd;
+        margin: 20px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  
+    <div id="app">
+      <div>
+        <!-- binding attributes -->
+        <h1>
+          <a v-bind:href="url">DT Vergil</a>
+          <br>
+          <a :href="url2">Vergil</a>
+          <br>
+          <!-- Images -->
+          <ul><li v-for="book in books"><image :src="book.img" :alt="book.title"></image><h3>title: {{book.title}}</h3><p>author: {{book.author}}</p></li></ul>
+        </h1>
+
+      </div>
+
+      <div v-if="!showBooks" @click="toggle">Show Books</div>
+      <div v-else @click="toggle">Hide Books</div>
+      
+      
+
+
+      <div v-if="showBooks">
+        <div><ul>
+          <li v-for="item in books">
+            {{item.title}} - {{item.author}}
+          </li>
+        </ul></div>
+
+        <p>{{ title }} - {{ author }} - {{ age }}</p>
+        <button v-on:click="age++">Increase Age</button>
+        <button v-on:click="age--">Decrease Age</button>
+      </div>
+      <div v-show="showBooks">Currently showing books</div>
+
+      <br>
+      <!-- mouse events -->
+      <div class="box" @mouseover="handleEvent($event, 'Apples')">mouse over (enter)</div>
+      <div class="box" @mouseleave="handleEvent('Apples', $event)">mosue leave</div>
+      <div class="box" @dblclick="handleEvent">double click</div>
+      <div class="box" @mousemove="handleMouseMove">[{{x}},{{y}}]</div>
+    </div>
+
+
+
+    <script src="app.js"></script>
+  </body>
+</html>
